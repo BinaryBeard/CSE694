@@ -2,15 +2,20 @@
 
 var followScript : SmoothFollow;
 
+var mainCamera : Camera;
+var followCamera : Camera;
+
 var projectile:Transform;
-var shootForce = -1000;
+var shootForce = 1000;
+var moveSpeed : float = 1.0;
 var instanceBullet;
 
 static var moveUp : boolean = true;
 static var stopped : boolean = false;
 
 function Start () {
-	
+	followCamera.enabled = true;
+	mainCamera.enabled = false;
 }
 
 function Update () {
@@ -31,18 +36,27 @@ function Update () {
 	if (!stopped) {
 	
 		if (moveUp) {
-			transform.eulerAngles.x++;
+			transform.eulerAngles.x+=moveSpeed;
 		}
 		else {
-			transform.eulerAngles.x--;
+			transform.eulerAngles.x-=moveSpeed;
 		}
 	}
 }
 
 function Fire() {
 
-		instanceBullet = Instantiate(projectile, transform.position, Quaternion.identity);
-		instanceBullet.rigidbody.AddForce(transform.forward * shootForce);
-		followScript.target = instanceBullet;
-		followScript.LateUpdate();
+	var cam : GameObject = GameObject.Find("FollowCamera");
+	var sf : SmoothFollow = cam.GetComponent(SmoothFollow);
+
+	instanceBullet = Instantiate(projectile, transform.position, Quaternion.identity);
+	instanceBullet.rigidbody.AddForce(transform.forward * (-shootForce));
+				
+	followCamera.enabled = true;
+					
+	sf.target = GameObject.Find("Bullet(Clone)").transform;
+	sf.LateUpdate();
+
+	followScript.target = instanceBullet;
+	followScript.LateUpdate();
 }	

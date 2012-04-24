@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Canon.js">
+    <Files>
+      <File FileName="../../../../Downloads/Procedural/Assets/Sources/InitialRigidbodyVelocity.js" Line="1" Column="1" />
+      <File FileName="../../../../Downloads/Procedural/Assets/Sources/ExtrudedMeshTrail.js" Line="32" Column="4" />
+      <File FileName="Assets/StopBall.js" Line="3" Column="29" />
+      <File FileName="Assets/Canon.js" Line="57" Column="57" />
+      <File FileName="Assets/Standard Assets/Scripts/Camera Scripts/SmoothFollow.js" Line="60" Column="39" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

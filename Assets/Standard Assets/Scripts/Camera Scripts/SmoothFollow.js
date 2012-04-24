@@ -24,14 +24,14 @@ var rotationDamping = 3.0;
 
 
 function LateUpdate () {
-
-
+	
 	Debug.Log(target);
 	//target = followObject;
 	// Early out if we don't have a target
-	if (!target)
+	if (!target) {
+		Debug.Log("No Target");
 		return;
-	
+	}
 	// Calculate the current rotation angles
 	var wantedRotationAngle = target.eulerAngles.y;
 	var wantedHeight = target.position.y + height;
@@ -51,10 +51,23 @@ function LateUpdate () {
 	// Set the position of the camera on the x-z plane to:
 	// distance meters behind the target
 	transform.position = target.position;
-	transform.position -= currentRotation * Vector3.forward * distance;
+	var speedFactor = currentRotation * Vector3.forward * distance;
+	
+	if (target.rigidbody.velocity.magnitude >= 35) {
+				transform.position -= Vector3(Mathf.Lerp(transform.position.x,(speedFactor * (30*.25)).x, Time.time),Mathf.Lerp(transform.position.y,(speedFactor * (35*.25)).y, Time.time),Mathf.Lerp(transform.position.z,(speedFactor * (35*.25)).z, Time.time));
 
+	}
+	else if (speedFactor.magnitude < (speedFactor * (target.rigidbody.velocity.x*.25)).magnitude) {
+		transform.position -= Vector3(Mathf.Lerp(transform.position.x,(speedFactor * (target.rigidbody.velocity.x*.25)).x, Time.time),Mathf.Lerp(transform.position.y,(speedFactor * (target.rigidbody.velocity.x*.25)).y, Time.time),Mathf.Lerp(transform.position.z,(speedFactor * (target.rigidbody.velocity.x*.25)).z, Time.time));
+	}
+	else {
+		transform.position -= Vector3(Mathf.Lerp(transform.position.x,speedFactor.x, Time.time),Mathf.Lerp(transform.position.y,speedFactor.y,Time.time),Mathf.Lerp(transform.position.z,speedFactor.z, Time.time));
+	}
+	
 	// Set the height of the camera
 	transform.position.y = currentHeight;
+
+
 	
 	// Always look at the target
 	transform.LookAt (target);
