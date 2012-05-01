@@ -1,14 +1,16 @@
 // Putting some comments here so I can test the commit.
+#pragma strict
+
 
 var followScript : SmoothFollow;
 
 var mainCamera : Camera;
 var followCamera : Camera;
 
-var projectile:Transform;
+var projectile : Transform;
 var shootForce = 1000;
 var moveSpeed : float = 1.0;
-var instanceBullet;
+var instanceBullet : GameObject;
 
 static var moveUp : boolean = true;
 static var stopped : boolean = false;
@@ -49,7 +51,7 @@ function Fire() {
 	var cam : GameObject = GameObject.Find("FollowCamera");
 	var sf : SmoothFollow = cam.GetComponent(SmoothFollow);
 
-	instanceBullet = Instantiate(projectile, transform.position, Quaternion.identity);
+	instanceBullet = Instantiate(projectile.gameObject, transform.position, Quaternion.identity);
 	instanceBullet.rigidbody.AddForce(transform.forward * (-shootForce));
 				
 	followCamera.enabled = true;
@@ -57,6 +59,6 @@ function Fire() {
 	sf.target = GameObject.Find("Bullet(Clone)").transform;
 	sf.LateUpdate();
 
-	followScript.target = instanceBullet;
+	followScript.target = instanceBullet.transform;
 	followScript.LateUpdate();
 }	

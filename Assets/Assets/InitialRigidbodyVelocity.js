@@ -11,4 +11,5 @@ function Update() {
 	else {
 		rigidbody.velocity = transform.TransformDirection(Vector3.right) * 0;
 	}
+	
 }
