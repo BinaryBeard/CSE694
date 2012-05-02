@@ -1,14 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Assets/GUI Speed.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Assets/ExtrudedMeshTrail.js">
     <Files>
       <File FileName="Assets/Assets/SmoothFollow.js" Line="1" Column="1" />
-      <File FileName="Assets/Assets/InitialRigidbodyVelocity.js" Line="1" Column="1" />
+      <File FileName="Assets/Assets/Canon.js" Line="51" Column="11" />
+      <File FileName="Assets/Assets/GUI Distance.js" Line="6" Column="2" />
       <File FileName="Assets/Assets/ExtrudedMeshTrail.js" Line="1" Column="1" />
-      <File FileName="Assets/Assets/Canon.js" Line="10" Column="27" />
-      <File FileName="Assets/Standard Assets/Toon Shading/Sources/Shaders/Toony-LightedOutline.shader" Line="1" Column="1" />
-      <File FileName="Assets/Materials/Toon TF2.shader" Line="62" Column="2" />
-      <File FileName="Assets/Assets/GUI Speed.js" Line="6" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

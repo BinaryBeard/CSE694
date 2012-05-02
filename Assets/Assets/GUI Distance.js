@@ -1,16 +1,12 @@
 #pragma strict
 
-var speedText = "0";
+var distanceText = "0";
 
 function Start () {
-	guiText.material.color = Color.blue;
-	
+	guiText.text = distanceText;
 }
 
 function Update () {
-
-	guiText.material.color = Color.blue;
-
 	
 	var bullet = GameObject.Find("Bullet(Clone)");
 	var canon = GameObject.Find("Canon");
@@ -25,10 +21,9 @@ function Update () {
 	Debug.Log(speed);
 	
 	if (distance > 0) {
-		speedText = distance.ToString();
+		distanceText = distance.ToString();
 	}
 
 	
-	guiText.text = speedText;
-
+	guiText.text = distanceText;
 }

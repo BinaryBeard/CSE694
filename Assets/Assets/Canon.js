@@ -7,6 +7,23 @@ var followScript : SmoothFollow;
 var mainCamera : Camera;
 var followCamera : Camera;
 
+/* GravityEffect
+	
+Planets:
+Earth - 1.0
+Mercuty - 0.3
+Venus - 0.9
+Moon - 0.1
+Mars - 0.3
+Jupiter - 2.3
+Saturn - 1.0
+Uranus - 0.8
+Neptune - 1.1
+Sun - 27.0
+
+*/
+
+var gravityEffect : float = 1.0;
 var projectile : Transform;
 var shootForce = 1000;
 var moveSpeed : float = 1.0;
@@ -29,9 +46,16 @@ function Update () {
 		moveUp = true;
 	}
 	
+	// Test for touch input
+
+	if (Input.touchCount > 0) {
+		stopped = !stopped;
+
+		Fire();
+	}	
 	if (Input.GetButtonDown("Jump")) {
 		stopped = !stopped;
-		// Start Power meter
+
 		Fire();
 	}
 	
@@ -52,6 +76,7 @@ function Fire() {
 	var sf : SmoothFollow = cam.GetComponent(SmoothFollow);
 
 	instanceBullet = Instantiate(projectile.gameObject, transform.position, Quaternion.identity);
+	instanceBullet.rigidbody.mass = gravityEffect;
 	instanceBullet.rigidbody.AddForce(transform.forward * (-shootForce));
 				
 	followCamera.enabled = true;
