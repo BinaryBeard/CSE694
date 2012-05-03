@@ -47,12 +47,13 @@ function Update () {
 	}
 	
 	// Test for touch input
-
+	// TODO: Find a better way to detect touch
 	if (Input.touchCount > 0) {
 		stopped = !stopped;
 
 		Fire();
 	}	
+	// Test for the space bar
 	if (Input.GetButtonDown("Jump")) {
 		stopped = !stopped;
 

@@ -3,7 +3,7 @@
 var distanceText = "0";
 
 function Start () {
-	guiText.text = distanceText;
+	guiText.text = distanceText + "m";
 }
 
 function Update () {
@@ -16,14 +16,11 @@ function Update () {
 
 	
 	var distance : int = bulletLocation - canonLocation;
-
-
-	Debug.Log(speed);
 	
 	if (distance > 0) {
 		distanceText = distance.ToString();
 	}
 
 	
-	guiText.text = distanceText;
+	guiText.text = distanceText + "m";
 }
