@@ -1,13 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Assets/Canon.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Assets/Scripts/SmoothFollow.js">
     <Files>
-      <File FileName="Assets/Assets/SmoothFollow.js" Line="28" Column="7" />
-      <File FileName="Assets/Assets/Canon.js" Line="56" Column="27" />
-      <File FileName="Assets/Assets/GUI Distance.js" Line="19" Column="1" />
-      <File FileName="Assets/Assets/GUI Objective.js" Line="11" Column="2" />
-      <File FileName="Assets/Assets/StopBall.js" Line="1" Column="1" />
-      <File FileName="Assets/Assets/InitialRigidbodyVelocity.js" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/Toon Shading/Sources/Shaders/Toony-Basic.shader" Line="7" Column="2" />
+      <File FileName="Assets/Assets/Shaders/Terrain Toon Shader.shader" Line="2" Column="1" />
+      <File FileName="Assets/Assets/Scripts/SmoothFollow.js" Line="77" Column="3" />
+      <File FileName="Assets/Standard Assets/Scripts/Camera Scripts/MouseOrbit.js" Line="8" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
