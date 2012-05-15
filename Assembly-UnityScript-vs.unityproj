@@ -47,9 +47,10 @@
      <Compile Include="Assets\Assets\Scripts\Canon.js" />
      <Compile Include="Assets\Assets\Scripts\GUI Distance.js" />
      <Compile Include="Assets\Assets\Scripts\GUI Objective.js" />
-     <Compile Include="Assets\Assets\Scripts\InitialRigidbodyVelocity.js" />
+     <Compile Include="Assets\Assets\Scripts\Pause Game.js" />
      <Compile Include="Assets\Assets\Scripts\SmoothFollow.js" />
      <Compile Include="Assets\Assets\Scripts\StopBall.js" />
+     <Compile Include="Assets\Assets\Scripts\mainGUI.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\CameraRelativeControl.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\FirstPersonControl.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\FollowTransform.js" />

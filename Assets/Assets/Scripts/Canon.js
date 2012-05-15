@@ -47,28 +47,23 @@ function Update () {
 	}
 	
 	// Test for touch input
-	// TODO: Find a better way to detect touch
-	if (Input.touchCount > 0) {
+	if (Input.touchCount > 0 && GameObject.Find("Bullet(Clone)") == null) {
 		stopped = !stopped;
 
-		Fire();
+		GameObject.Find("PauseButton").guiTexture.enabled = false;
+
+		Fire();		
 	}	
 	// Test for the space bar
-	if (Input.GetButtonDown("Jump")) {
+	if (Input.GetButtonDown("Jump") && GameObject.Find("Bullet(Clone)") == null) {
 		stopped = !stopped;
+		
+		GameObject.Find("PauseButton").guiTexture.enabled = false;
 
 		Fire();
 	}
 	
-	if (!stopped) {
-	
-		if (moveUp) {
-			transform.eulerAngles.x+=moveSpeed;
-		}
-		else {
-			transform.eulerAngles.x-=moveSpeed;
-		}
-	}
+	Stop();
 }
 
 function Fire() {
@@ -88,3 +83,15 @@ function Fire() {
 	followScript.target = instanceBullet.transform;
 	followScript.LateUpdate();
 }	
+
+function Stop() {
+	if (!stopped) {
+	
+		if (moveUp) {
+			transform.eulerAngles.x+=moveSpeed;
+		}
+		else {
+			transform.eulerAngles.x-=moveSpeed;
+		}
+	}
+}
