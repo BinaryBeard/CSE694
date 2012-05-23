@@ -1,6 +1,8 @@
 #pragma strict
 
-var myStyle : GUIStyle;
+var startStyle : GUIStyle;
+var howToStyle : GUIStyle;
+
 
 function Start () {
 
@@ -12,10 +14,10 @@ function Update () {
 
 function OnGUI () {
 
-    if (GUI.Button (Rect (Screen.width/16,Screen.height/2 - Screen.height/4,Screen.width/4,Screen.height/4), "Start Game")) {    
+    if (GUI.Button (Rect (Screen.width/9,Screen.height/2 - Screen.height/12,Screen.width/5,Screen.width/5),"",startStyle)) {    
         Application.LoadLevel("Scene");
     }
-    if (GUI.Button (Rect (Screen.width/16,Screen.height/2 + 20,Screen.width/4,Screen.height/4), "How To Play")) {
+    if (GUI.Button (Rect (Screen.width/9,Screen.height/2 + Screen.height/5,Screen.width/5,Screen.width/5), "", howToStyle)) {
     	Application.LoadLevel("HowTo");
     }
 }

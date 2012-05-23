@@ -6,10 +6,10 @@ function Start () {
 
 function Update() {
 
-	this.guiTexture.pixelInset.width = Screen.width*.04;
-	this.guiTexture.pixelInset.height = Screen.width*.04;
-	this.guiTexture.pixelInset.xMin = Screen.width - (Screen.width*.05);
-	this.guiTexture.pixelInset.yMin = Screen.height - (Screen.width*.05);
+	this.guiTexture.pixelInset.width = Screen.width*.1;
+	this.guiTexture.pixelInset.height = Screen.width*.1;
+	this.guiTexture.pixelInset.xMin = Screen.width - (Screen.width*.11);
+	this.guiTexture.pixelInset.yMin = Screen.height - (Screen.width*.11);
 
 	if (Input.touchCount==0) {
    
