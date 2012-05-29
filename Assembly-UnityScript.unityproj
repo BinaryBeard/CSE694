@@ -44,15 +44,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Assets\Scripts\Canon.js" />
-     <Compile Include="Assets\Assets\Scripts\GUI Distance.js" />
-     <Compile Include="Assets\Assets\Scripts\GUI Objective.js" />
-     <Compile Include="Assets\Assets\Scripts\Pause Game.js" />
      <Compile Include="Assets\Assets\Scripts\SmoothFollow.js" />
      <Compile Include="Assets\Assets\Scripts\StopBall.js" />
+     <Compile Include="Assets\Assets\Scripts\cannon.js" />
+     <Compile Include="Assets\Assets\Scripts\checkForCannon.js" />
+     <Compile Include="Assets\Assets\Scripts\distanceText.js" />
+     <Compile Include="Assets\Assets\Scripts\dontDestroy.js" />
      <Compile Include="Assets\Assets\Scripts\guiBackground.js" />
      <Compile Include="Assets\Assets\Scripts\mainGUI.js" />
+     <Compile Include="Assets\Assets\Scripts\objectiveText.js" />
+     <Compile Include="Assets\Assets\Scripts\pauseBackground.js" />
      <Compile Include="Assets\Assets\Scripts\pauseGUI.js" />
+     <Compile Include="Assets\Assets\Scripts\pauseGame.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\CameraRelativeControl.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\FirstPersonControl.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\FollowTransform.js" />

@@ -2,7 +2,6 @@
 #pragma strict
 
 
-var followScript : SmoothFollow;
 
 var mainCamera : Camera;
 var followCamera : Camera;
@@ -69,7 +68,7 @@ function Update () {
 function Fire() {
 
 	var cam : GameObject = GameObject.Find("FollowCamera");
-	var sf : SmoothFollow = cam.GetComponent(SmoothFollow);
+	var sf : SmoothFollow = cam.GetComponent("SmoothFollow");
 
 	instanceBullet = Instantiate(projectile.gameObject, transform.position, Quaternion.identity);
 	instanceBullet.rigidbody.mass = gravityEffect;
@@ -79,19 +78,23 @@ function Fire() {
 					
 	sf.target = GameObject.Find("Bullet(Clone)").transform;
 	sf.LateUpdate();
-
-	followScript.target = instanceBullet.transform;
-	followScript.LateUpdate();
 }	
 
 function Stop() {
 	if (!stopped) {
 	
 		if (moveUp) {
+		
 			transform.eulerAngles.x+=moveSpeed;
 		}
 		else {
+		
 			transform.eulerAngles.x-=moveSpeed;
 		}
 	}
+}
+
+function Awake () {
+
+    DontDestroyOnLoad (this);
 }

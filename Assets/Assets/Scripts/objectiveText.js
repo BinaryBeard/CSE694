@@ -43,7 +43,7 @@ function Start () {
 	objectiveArray[1].par3 = 0;
 	
 
-	Debug.LogError(objectiveArray[1]);
+	Debug.Log(objectiveArray[1].objectiveText);
 		
 	SetNormalColor();
 			
@@ -61,17 +61,22 @@ function Update () {
 	var distanceText = GameObject.Find("DistanceText").guiText.text.Substring(0, GameObject.Find("DistanceText").guiText.text.Length -1);;
 	var distance : int = parseInt(distanceText);
 	
-	var bulletSpeed = GameObject.Find("Bullet(Clone)").rigidbody.velocity.magnitude;				
+	if (GameObject.Find("Bullet(Clone)")) {
+	
+		var bulletSpeed = GameObject.Find("Bullet(Clone)").rigidbody.velocity.magnitude;				
+	}
 	
 	if (bulletSpeed <= 0 && objectiveComplete) {
+	
 		GameObject.Find("ObjectiveComplete").guiText.text = "Objective Complete!";
 	}
 	else {
+	
 		GameObject.Find("ObjectiveComplete").guiText.text = "";
 	}
 	
 	// Specific for this objective
-	if (distance > objectiveArray[0].par1) {
+	if (distance > objectiveArray[1].par1) {
 		SetVictoryColor();
 		objectiveComplete = true;
 	}

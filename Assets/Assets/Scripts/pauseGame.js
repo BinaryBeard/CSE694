@@ -11,23 +11,24 @@ function Update() {
 	this.guiTexture.pixelInset.xMin = Screen.width - (Screen.width*.11);
 	this.guiTexture.pixelInset.yMin = Screen.height - (Screen.width*.11);
 
-	if (Input.touchCount==0) {
+	if (Input.touchCount == 1) {
    
    		var touch: Touch = Input.touches[0]; 
 
    		if(touch.phase == TouchPhase.Began && guiTexture.HitTest(touch.position)) {
 
-			PauseText();
-            Debug.Log("Button Pressed");
+			PauseGame();
       	}
    	}
 }
 
 function OnMouseDown() {
-	PauseText();
-	Debug.Log("Button Pressed");
+
+	PauseGame();
 }
 
-function PauseText() {
-	GameObject.Find("PauseText").guiText.text = "Paused";
+function PauseGame() {
+	
+	Debug.Log("Pause Pressed");
+	Application.LoadLevel("Pause");
 }

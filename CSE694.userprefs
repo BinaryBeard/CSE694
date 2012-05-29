@@ -1,16 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Assets/Scripts/pauseGUI.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Assets/Scripts/dontDestroy.js">
     <Files>
-      <File FileName="Assets/Assets/Scripts/Canon.js" Line="1" Column="1" />
-      <File FileName="Assets/Assets/Scripts/GUI Distance.js" Line="1" Column="1" />
-      <File FileName="Assets/Assets/Scripts/GUI Objective.js" Line="1" Column="1" />
+      <File FileName="Assets/Assets/Scripts/Canon.js" Line="100" Column="2" />
       <File FileName="Assets/Assets/Scripts/SmoothFollow.js" Line="1" Column="1" />
       <File FileName="Assets/Assets/Scripts/StopBall.js" Line="1" Column="1" />
-      <File FileName="Assets/Assets/Scripts/Pause Game.js" Line="1" Column="1" />
       <File FileName="Assets/Assets/Scripts/mainGUI.js" Line="1" Column="1" />
-      <File FileName="Assets/Assets/Scripts/guiBackground.js" Line="9" Column="2" />
-      <File FileName="Assets/Assets/Scripts/pauseGUI.js" Line="13" Column="57" />
+      <File FileName="Assets/Assets/Scripts/guiBackground.js" Line="1" Column="1" />
+      <File FileName="Assets/Assets/Scripts/pauseGUI.js" Line="27" Column="63" />
+      <File FileName="Assets/Assets/Scripts/pauseGame.js" Line="21" Column="1" />
+      <File FileName="Assets/Assets/Scripts/objectiveText.js" Line="75" Column="37" />
+      <File FileName="Assets/Assets/Scripts/dontDestroy.js" Line="15" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
