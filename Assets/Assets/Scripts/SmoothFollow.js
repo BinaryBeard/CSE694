@@ -25,74 +25,84 @@ var rotationDamping = 3.0;
 
 function LateUpdate () {
 	
-	// Calculate the current rotation angles
-	var wantedRotationAngle = target.eulerAngles.y;
-	var wantedHeight = target.position.y + height;
-		
-	var currentRotationAngle = transform.eulerAngles.y;
-	var currentHeight = transform.position.y;
-	if (target.rigidbody.velocity.magnitude > 1) {
+	Debug.Log(target.name);
+	Debug.Log(target.name == "Bullet(Clone)");
 	
-		// Damp the rotation around the y-axis
-		currentRotationAngle = Mathf.LerpAngle (currentRotationAngle, wantedRotationAngle, rotationDamping * Time.deltaTime);
+	if (target.name == "Bullet(Clone)") { 
+		
+		// Calculate the current rotation angles
+		var wantedRotationAngle = target.eulerAngles.y;
+		var wantedHeight = target.position.y + height;
+		var currentRotationAngle = transform.eulerAngles.y;
+		var currentHeight = transform.position.y;
+		
+		if (target.rigidbody.velocity.magnitude > 1) {
+	
+			// Damp the rotation around the y-axis
+			currentRotationAngle = Mathf.LerpAngle (currentRotationAngle, wantedRotationAngle, rotationDamping * Time.deltaTime);
 
-		// Damp the height
-		currentHeight = Mathf.Lerp (currentHeight, wantedHeight, heightDamping * Time.deltaTime);
+			// Damp the height
+			currentHeight = Mathf.Lerp (currentHeight, wantedHeight, heightDamping * Time.deltaTime);
 
-		// Convert the angle into a rotation
-		var currentRotation = Quaternion.Euler (0, currentRotationAngle, 0);
+			// Convert the angle into a rotation
+			var currentRotation = Quaternion.Euler (0, currentRotationAngle, 0);
 	
-		// Set the position of the camera on the x-z plane to:
-		// distance meters behind the target
-		transform.position = target.position;
-		var speedFactor = currentRotation * Vector3.forward * distance;
-	}
-	
-	if (target.rigidbody.velocity.magnitude >= 10){
-		
-		if (target.rigidbody.velocity.magnitude >= 35) {
-		
-			transform.position -= Vector3(Mathf.Lerp(transform.position.x,(speedFactor * (30*.25)).x, Time.time),Mathf.Lerp(transform.position.y,(speedFactor * (35*.25)).y, Time.time),Mathf.Lerp(transform.position.z,(speedFactor * (35*.25)).z, Time.time));
+			// Set the position of the camera on the x-z plane to:
+			// distance meters behind the target
+			transform.position = target.position;
+			var speedFactor = currentRotation * Vector3.forward * distance;
 		}
-		else if (speedFactor.magnitude < (speedFactor * (target.rigidbody.velocity.x*.25)).magnitude) {
-			transform.position -= Vector3(Mathf.Lerp(transform.position.x,(speedFactor * (target.rigidbody.velocity.x*.25)).x, Time.time),Mathf.Lerp(transform.position.y,(speedFactor * (target.rigidbody.velocity.x*.25)).y, Time.time),Mathf.Lerp(transform.position.z,(speedFactor * (target.rigidbody.velocity.x*.25)).z, Time.time));
+	
+		if (target.rigidbody.velocity.magnitude >= 10){
+		
+			if (target.rigidbody.velocity.magnitude >= 35) {
+		
+				transform.position -= Vector3(Mathf.Lerp(transform.position.x,(speedFactor * (30*.25)).x, Time.time),Mathf.Lerp(transform.position.y,(speedFactor * (35*.25)).y, Time.time),Mathf.Lerp(transform.position.z,(speedFactor * (35*.25)).z, Time.time));
+			}
+			else if (speedFactor.magnitude < (speedFactor * (target.rigidbody.velocity.x*.25)).magnitude) {
+			
+				transform.position -= Vector3(Mathf.Lerp(transform.position.x,(speedFactor * (target.rigidbody.velocity.x*.25)).x, Time.time),Mathf.Lerp(transform.position.y,(speedFactor * (target.rigidbody.velocity.x*.25)).y, Time.time),Mathf.Lerp(transform.position.z,(speedFactor * (target.rigidbody.velocity.x*.25)).z, Time.time));
+			}
+			else {
+				
+				transform.position -= Vector3(Mathf.Lerp(transform.position.x,speedFactor.x, Time.time),Mathf.Lerp(transform.position.y,speedFactor.y,Time.time),Mathf.Lerp(transform.position.z,speedFactor.z, Time.time));
+			}
+		}
+		else if (target.rigidbody.velocity.magnitude > 1) {
+			transform.position.y = 10;
+			transform.position.z = -10;
+			transform.position.x += 5;
 		}
 		else {
-			transform.position -= Vector3(Mathf.Lerp(transform.position.x,speedFactor.x, Time.time),Mathf.Lerp(transform.position.y,speedFactor.y,Time.time),Mathf.Lerp(transform.position.z,speedFactor.z, Time.time));
-		}
-	}
-	else if (target.rigidbody.velocity.magnitude > 1) {
-		transform.position.y = 10;
-		transform.position.z = -10;
-		transform.position.x += 5;
-	}
-	else {
 		
-		var maxX = target.position.x + 100;
-		var maxY = target.position.y + 25;
-		var maxZ = target.position.z - 50;
-		var camX = transform.position.x;
-		var camY = transform.position.y;
-		var camZ = transform.position.z;
+			var maxX = target.position.x + 100;
+			var maxY = target.position.y + 25;
+			var maxZ = target.position.z - 50;
+			var camX = transform.position.x;
+			var camY = transform.position.y;
+			var camZ = transform.position.z;
 		
-		if (camX <= maxX) {
-			transform.position.x += .5;
-		}
+			if (camX <= maxX) {
+			
+				transform.position.x += .5;
+			}
 		
-		if (camY <= maxY) {
+			if (camY <= maxY) {
+			
 			transform.position.y += .125;
-		}
+			}
 		
-		if (camZ >= maxZ) {
-			transform.position.z -= .25;
+			if (camZ >= maxZ) {
+				transform.position.z -= .25;
+			}
 		}
-	}
 	
-	// Set the height of the camera
-	if (target.rigidbody.velocity.magnitude > 1) {
-		transform.position.y = currentHeight;
-	}
+		// Set the height of the camera
+		if (target.rigidbody.velocity.magnitude > 1) {
+			transform.position.y = currentHeight;
+		}
 	
-	// Always look at the target
-	transform.LookAt (target);
+		// Always look at the target
+		transform.LookAt (target);
+	}
 }

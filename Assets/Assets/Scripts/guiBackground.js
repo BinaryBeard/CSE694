@@ -6,6 +6,11 @@ function Start () {
 
 function Update () {
 
+	if (GameObject.Find("Cannon")) {
+	
+		Destroy(GameObject.Find("Cannon"));
+	}
+
 	this.guiTexture.pixelInset.xMin = 0;
 	this.guiTexture.pixelInset.yMin = 0;
 	
