@@ -25,7 +25,6 @@ var rotationDamping = 3.0;
 
 function LateUpdate () {
 	
-	Debug.Log(target.name);
 	Debug.Log(target.name == "Bullet(Clone)");
 	
 	if (target.name == "Bullet(Clone)") { 

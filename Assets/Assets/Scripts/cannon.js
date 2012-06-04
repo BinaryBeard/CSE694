@@ -33,11 +33,16 @@ function Update () {
 	}
 	
 	// Test for touch input
-	if (Input.touchCount > 0 && GameObject.Find("Bullet(Clone)") == null) {
 	
-		GameObject.Find("PauseButton").guiTexture.enabled = false;
-		Fire();		
-	}	
+	if (Input.touchCount > 0) {
+	
+		if (Input.touches[0].phase == TouchPhase.Began && GameObject.Find("Bullet(Clone)") == null) {
+	
+			GameObject.Find("PauseButton").guiTexture.enabled = false;
+			Fire();		
+		}	
+	}
+	
 	// Test for the space bar
 	if (Input.GetButtonDown("Jump") && GameObject.Find("Bullet(Clone)") == null) {
 

@@ -70,7 +70,7 @@ function OnGUI() {
     	GameObject.Find("Cannon_System").GetComponent(cannon).stopped = false;
     }
     
-	if (GUI.Button (Rect (Screen.width/9 + 500,Screen.height/5 + Screen.height/5,Screen.width/5,Screen.width/5), "", nextStyle)) {
+	if (GUI.Button (Rect (Screen.width - Screen.width/4.5,Screen.height/2.5,Screen.width/5,Screen.width/5), "", nextStyle)) {
 
        	// Take gravity to next level
        	if (currentPlanet < planetArray.Length - 2) {
@@ -83,7 +83,7 @@ function OnGUI() {
     	Application.LoadLevel("MainMenu");
     }
     
-    if (GUI.Button (Rect (Screen.width/9 + 100,Screen.height/5 + Screen.height/5,Screen.width/5,Screen.width/5), "", prevStyle)) {
+    if (GUI.Button (Rect (Screen.width/45,Screen.height/2.5,Screen.width/5,Screen.width/5), "", prevStyle)) {
 
        	// Take gravity to previous level
        	if (currentPlanet > 0) {
@@ -92,8 +92,8 @@ function OnGUI() {
        	}
     }
     
-	GUI.Label (Rect(Screen.width/9+ 290, Screen.height/2, 200, 50), planetArray[currentPlanet].planetName, planetStyle);
-	GUI.Label (Rect(0, 10, Screen.width, 300), planetArray[currentPlanet].gravityEffect.ToString() + "x\n earth's gravity", gravityStyle);
+	GUI.Label (Rect(Screen.width/2 - 300, Screen.height/2 - 100, 600, 200), planetArray[currentPlanet].planetName, planetStyle);
+	GUI.Label (Rect(0, 10, Screen.width, 300), planetArray[currentPlanet].gravityEffect.ToString() + "x\n Earth's gravity", gravityStyle);
 
 	GameObject.Find("Cannon_System").GetComponent(cannon).gravityEffect = planetArray[currentPlanet].gravityEffect;
 	GameObject.Find("Cannon_System").GetComponent(cannon).shootForce = planetArray[currentPlanet].shootForce;

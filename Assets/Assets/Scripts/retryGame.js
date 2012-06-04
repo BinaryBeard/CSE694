@@ -11,7 +11,7 @@ function Update() {
 	this.guiTexture.pixelInset.xMin = Screen.width/2 - (Screen.width*.2) - 50;
 	this.guiTexture.pixelInset.yMin = Screen.height/6;
 
-	if (Input.touchCount == 2) {
+	if (Input.touchCount == 1) {
    
    		var touch: Touch = Input.touches[0]; 
 
