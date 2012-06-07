@@ -47,7 +47,7 @@ function Start () {
 	objectiveArray[8] = new Objective(2, "Shoot between 150m annd 200m", 150, 200, 0);
 	objectiveArray[9] = new Objective(2, "Shoot between 400m annd 600m", 400, 600, 0);
 	objectiveArray[10] = new Objective(0, "Shoot at least 200m", 200, 0, 0);
-	/*objectiveArray[11] = new Objective(2, "Shoot between 50m annd 200m", 50, 200, 0);
+	objectiveArray[11] = new Objective(2, "Shoot between 50m annd 200m", 50, 200, 0);
 
 	objectiveArray[12] = new Objective(0, "Shoot at least 250m", 250, 0, 0);
 	objectiveArray[13] = new Objective(2, "Shoot between 400m annd 550m", 400, 550, 0);
@@ -92,7 +92,7 @@ function Start () {
 	objectiveArray[43] = new Objective(0, "Shoot at least 700m", 700, 0, 0);
 	objectiveArray[44] = new Objective(2, "Shoot between 300m annd 500m", 300, 500, 0);
 	objectiveArray[45] = new Objective(2, "Shoot between 300m annd 350m", 300, 350, 0);
-*/
+
 	if (!PlayerPrefs.HasKey("ObjectiveInt")) {
 		
 		Debug.Log("ObjectiveInt not there!");
